@@ -6,9 +6,10 @@ import StorySection from "@/components/StorySection";
 import EventsSection from "@/components/EventsSection";
 import GallerySection from "@/components/GallerySection";
 import RSVPSection from "@/components/RSVPSection";
-import DressCodeSection from "@/components/DressCodeSection";
 import GiftSection from "@/components/GiftSection";
 import Footer from "@/components/Footer";
+import StickyBottomBar from "@/components/StickyBottomBar";
+import FloatingWishes from "@/components/FloatingWishes";
 
 export default function Home() {
   return (
@@ -20,10 +21,11 @@ export default function Home() {
       <StorySection />
       <EventsSection />
       <GallerySection />
-      <DressCodeSection />
       <GiftSection />
       <RSVPSection />
       <Footer />
+      <FloatingWishes />
+      <StickyBottomBar />
     </main>
   );
 }

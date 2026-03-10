@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, Heart } from "lucide-react";
+import { coupleData } from "@/data/weddingData";
 
 const navItems = [
   { name: "Trang chủ", href: "#home" },
@@ -44,12 +45,16 @@ export default function Navbar() {
             className="flex items-center gap-2 text-2xl font-script no-underline"
             whileHover={{ scale: 1.05 }}
           >
-            <span className={isScrolled ? "text-gold" : "text-white"}>Nam</span>
+            <span className={isScrolled ? "text-gold" : "text-white"}>
+              {coupleData.groom.name}
+            </span>
             <Heart
               className="w-5 h-5 fill-current"
-              style={{ color: '#D4A5A5' }}
+              style={{ color: "#D4A5A5" }}
             />
-            <span className={isScrolled ? "text-gold" : "text-white"}>Nữ</span>
+            <span className={isScrolled ? "text-gold" : "text-white"}>
+              {coupleData.bride.name}
+            </span>
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -76,9 +81,13 @@ export default function Navbar() {
             className="md:hidden p-2 rounded-lg bg-transparent border-none cursor-pointer"
           >
             {isMobileMenuOpen ? (
-              <X className={`w-6 h-6 ${isScrolled ? "text-dark" : "text-white"}`} />
+              <X
+                className={`w-6 h-6 ${isScrolled ? "text-dark" : "text-white"}`}
+              />
             ) : (
-              <Menu className={`w-6 h-6 ${isScrolled ? "text-dark" : "text-white"}`} />
+              <Menu
+                className={`w-6 h-6 ${isScrolled ? "text-dark" : "text-white"}`}
+              />
             )}
           </button>
         </div>

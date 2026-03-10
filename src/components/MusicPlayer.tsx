@@ -2,13 +2,26 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Music, Pause, Play, Volume2, VolumeX } from "lucide-react";
+import { Music, Pause, Play } from "lucide-react";
 
 export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(false);
   const [showControl, setShowControl] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [musicNotes, setMusicNotes] = useState<
+    { y: number; x: number; rotate: number; duration: number }[]
+  >([]);
+
+  // Pre-calculate random values for music notes to avoid hydration mistmatches
+  useEffect(() => {
+    const randomNotes = [...Array(3)].map(() => ({
+      y: -40 - Math.random() * 20,
+      x: (Math.random() - 0.5) * 40,
+      rotate: Math.random() * 360,
+      duration: 2 + Math.random(),
+    }));
+    setMusicNotes(randomNotes);
+  }, []);
 
   useEffect(() => {
     // Tự động play khi load trang (nếu trình duyệt cho phép)
@@ -18,8 +31,8 @@ export default function MusicPlayer() {
       audio.volume = 0.5;
       // Thử autoplay
       const playPromise = audio.play();
-      console.log(playPromise, 'playPromise');
-      
+      console.log(playPromise, "playPromise");
+
       if (playPromise !== undefined) {
         playPromise
           .then(() => {
@@ -44,42 +57,29 @@ export default function MusicPlayer() {
     }
   };
 
-  const toggleMute = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (audioRef.current) {
-      audioRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
-  };
-
   return (
     <div className="fixed bottom-6 left-6 z-50">
       {/* Hidden Audio Element */}
-      <audio
-        ref={audioRef}
-        src="/music/wedding-song.mp3"
-        loop
-        preload="auto"
-      />
+      <audio ref={audioRef} src="/music/wedding-song.mp3" loop preload="auto" />
 
       <div className="relative group">
         {/* Floating Notes Animation when playing */}
         <AnimatePresence>
           {isPlaying && (
             <>
-              {[...Array(3)].map((_, i) => (
+              {musicNotes.map((note, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 0, x: 0, scale: 0.5 }}
                   animate={{
                     opacity: [0, 1, 0],
-                    y: -40 - Math.random() * 20,
-                    x: (Math.random() - 0.5) * 40,
+                    y: note.y,
+                    x: note.x,
                     scale: 1,
-                    rotate: Math.random() * 360,
+                    rotate: note.rotate,
                   }}
                   transition={{
-                    duration: 2 + Math.random(),
+                    duration: note.duration,
                     repeat: Infinity,
                     delay: i * 0.8,
                     ease: "easeOut",
@@ -109,7 +109,7 @@ export default function MusicPlayer() {
               isPlaying ? "border-gold border-dashed" : "border-gray-200"
             }`}
           />
-          
+
           {/* Inner Icon */}
           <div className="relative z-10 text-gold">
             {isPlaying ? (
@@ -129,26 +129,26 @@ export default function MusicPlayer() {
                 className="absolute inset-0 bg-black/50 flex items-center justify-center rounded-full z-20"
               >
                 {isPlaying ? (
-                   <Pause className="w-5 h-5 text-white" />
+                  <Pause className="w-5 h-5 text-white" />
                 ) : (
-                   <Play className="w-5 h-5 text-white ml-1" />
+                  <Play className="w-5 h-5 text-white ml-1" />
                 )}
               </motion.div>
             )}
           </AnimatePresence>
         </motion.button>
-        
+
         {/* Helper Tooltip */}
         {!isPlaying && (
-           <motion.div 
-             initial={{ opacity: 0, x: -10 }}
-             animate={{ opacity: 1, x: 0 }}
-             exit={{ opacity: 0, x: -10 }}
-             className="absolute left-full top-1/2 -translate-y-1/2 ml-4 bg-white/90 backdrop-blur px-3 py-1.5 rounded-lg shadow-md text-xs font-medium text-dark whitespace-nowrap pointer-events-none hidden md:block"
-           >
-             Bật nhạc nền 🎵
-             <div className="absolute left-0 top-1/2 -translate-x-1 -translate-y-1/2 w-2 h-2 bg-white/90 rotate-45" />
-           </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -10 }}
+            className="absolute left-full top-1/2 -translate-y-1/2 ml-4 bg-white/90 backdrop-blur px-3 py-1.5 rounded-lg shadow-md text-xs font-medium text-dark whitespace-nowrap pointer-events-none hidden md:block"
+          >
+            Bật nhạc nền 🎵
+            <div className="absolute left-0 top-1/2 -translate-x-1 -translate-y-1/2 w-2 h-2 bg-white/90 rotate-45" />
+          </motion.div>
         )}
       </div>
     </div>

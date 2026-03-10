@@ -3,7 +3,7 @@
    ======================================== */
 
 /* Google Fonts - Must be imported BEFORE tailwindcss */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=Great+Vibes&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=Great+Vibes&display=swap");
 
 /* Import Tailwind CSS */
 @import "tailwindcss";
@@ -13,69 +13,42 @@
    ======================================== */
 
 @theme {
-  /* Custom Colors - Creates bg-*, text-*, border-* utilities */
-  --color-cream: #FFF8F0;
-  --color-blush: #F8E8E0;
-  --color-rose: #E8C4C4;
-  --color-dusty-rose: #D4A5A5;
-  --color-gold: #C9A962;
-  --color-gold-light: #E8D5A3;
-  --color-dark: #2C2C2C;
-  --color-muted: #7A7A7A;
+  /* Custom Colors - Zenlove Mobile-first Theme */
+  --color-cream: #F1EFE7; /* Paper/Vanilla cream for background */
+  --color-blush: #EAE6D7; /* Slightly darker cream for borders/inactive */
+  --color-rose: #4D5E4D; /* Olive Green - Primary accent */
+  --color-dusty-rose: #4D5E4D; /* Olive Green - Primary accent */
+  --color-gold: #C49F7D; /* Champagne Gold for text/decorative accents */
+  --color-gold-light: #E0CFA2; /* Light Champagne */
+  --color-dark: #333333; /* Dark Grey for text */
+  --color-muted: #7A7A7A; /* Muted Grey for small labels */
 
-  /* Custom Fonts - Creates font-* utilities */
-  --font-script: 'Great Vibes', cursive;
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  /* Custom Fonts */
+  --font-script: var(--font-script), "Great Vibes", cursive;
+  --font-display: var(--font-display), "Playfair Display", "Cormorant Garamond", serif;
+  --font-body: var(--font-body), "Inter", sans-serif;
 }
 
-/* ========================================
-   Dynamic Themes (next-themes overrides)
-   ======================================== */
-@layer base {
-  [data-theme='romantic'] {
-    --color-gold: #E68A8A;
-    --color-gold-light: #FFC4C4;
-    --color-cream: #FFF0F5;
-    --color-blush: #FFE4E1;
-    --color-dusty-rose: #FFB6C1;
-    --color-rose: #FF69B4;
-  }
 
-  [data-theme='classic'] {
-    --color-gold: #4A90E2;
-    --color-gold-light: #A4C8F5;
-    --color-cream: #F0F8FF;
-    --color-blush: #E6F2FF;
-    --color-dusty-rose: #87CEFA;
-    --color-rose: #4682B4;
-  }
-
-  [data-theme='nature'] {
-    --color-gold: #7DA37D;
-    --color-gold-light: #C1E1C1;
-    --color-cream: #F5F9F5;
-    --color-blush: #E8F3E8;
-    --color-dusty-rose: #A9CFA9;
-    --color-rose: #558B55;
-  }
-}
 
 /* ========================================
    Base Styles
    ======================================== */
 html {
   scroll-behavior: smooth;
-  /* Prevent color flash on theme change */
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 body {
   background-color: var(--color-cream);
-  color: #4A4A4A;
+  color: var(--color-dark);
   font-family: var(--font-body);
   line-height: 1.7;
   overflow-x: hidden;
+  /* Paper texture overlay pattern */
+  background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
   transition: background-color 0.5s ease;
 }
 
@@ -128,11 +101,16 @@ h6 {
 
 .divider::before,
 .divider::after {
-  content: '';
+  content: "";
   flex: 1;
   max-width: 6rem;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold),
+    transparent
+  );
 }
 
 /* Button Primary */
@@ -146,7 +124,11 @@ h6 {
   font-weight: 500;
   color: white;
   transition: all 0.3s ease;
-  background: linear-gradient(135deg, var(--color-gold), var(--color-dusty-rose));
+  background: linear-gradient(
+    135deg,
+    var(--color-gold),
+    var(--color-dusty-rose)
+  );
   box-shadow: 0 4px 15px rgba(201, 169, 98, 0.3);
   /* Note: shadow color is hardcoded, won't change perfectly but ok */
   border: none;
@@ -213,7 +195,6 @@ h6 {
    ======================================== */
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0);
@@ -225,7 +206,6 @@ h6 {
 }
 
 @keyframes pulse-glow {
-
   0%,
   100% {
     box-shadow: 0 0 20px rgba(201, 169, 98, 0.3);
