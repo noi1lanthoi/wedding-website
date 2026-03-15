@@ -11,9 +11,18 @@ import Footer from "@/components/Footer";
 import StickyBottomBar from "@/components/StickyBottomBar";
 import FloatingWishes from "@/components/FloatingWishes";
 
+import UnderConstruction from "@/components/UnderConstruction";
+
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <UnderConstruction />
+
+      {/* 
+        NOTE: Tạm thời ẩn các component hiện tại để hiển thị trang "Web chưa hoàn thiện".
+        Sẽ mở comment lại khi website đã hoàn thiện.
+      */}
+      {/*
       <WelcomeEnvelope />
       <Navbar />
       <HeroSection />
@@ -26,6 +35,7 @@ export default function Home() {
       <Footer />
       <FloatingWishes />
       <StickyBottomBar />
+      */}
     </main>
   );
 }
