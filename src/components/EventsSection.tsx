@@ -2,9 +2,6 @@
 
 import { motion } from "framer-motion";
 import {
-  MapPin,
-  Clock,
-  Calendar as CalendarIcon,
   Navigation,
   Heart,
   Flower2,
@@ -106,8 +103,8 @@ export default function EventsSection() {
           </div>
         </motion.div>
 
-        {/* Events Grid */}
-        <div className="flex flex-col items-center max-w-xl mx-auto mb-16 px-4 w-full">
+        {/* Events Grid (Redesigned Layout) */}
+        <div className="flex flex-col items-center max-w-2xl mx-auto mb-16 px-4 w-full">
           {events.map((event, index) => (
             <motion.div
               key={event.id}
@@ -116,31 +113,49 @@ export default function EventsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="bg-white rounded-md w-full p-8 sm:p-10 shadow-sm border border-black/5 text-center flex flex-col items-center"
+              className="bg-white rounded-xl w-full p-8 sm:p-12 shadow-sm border border-gold/10 text-center flex flex-col items-center relative overflow-hidden"
             >
-              <h3 className="text-2xl font-display text-rose mb-2">
+              {/* Subtle top floral decoration */}
+              <Flower2 className="w-12 h-12 text-rose/20 mb-6" strokeWidth={1} />
+              
+              <p className="text-rose font-medium tracking-wide text-sm sm:text-base uppercase mb-2">
+                Sự Kiện Diễn Ra Vào Lúc {event.time}
+              </p>
+              
+              <h4 className="font-display text-2xl sm:text-3xl text-dark mb-6">
+                THỨ BẢY
+              </h4>
+              
+              {/* Date Layout */}
+              <div className="flex items-center justify-center gap-4 border-y border-gold/30 py-4 mb-4 w-full max-w-xs">
+                <div className="flex-1 text-right">
+                  <span className="text-rose text-xs sm:text-sm font-medium tracking-widest uppercase">Tháng 04</span>
+                </div>
+                <div className="text-5xl sm:text-6xl font-display text-rose font-bold px-2">
+                  05
+                </div>
+                <div className="flex-1 text-left">
+                  <span className="text-rose text-xs sm:text-sm font-medium tracking-widest uppercase">Năm 2025</span>
+                </div>
+              </div>
+              
+              <p className="text-muted text-sm italic mb-8">
+                (Tức ngày 08 tháng 03 năm Ất Tỵ)
+              </p>
+              
+              <div className="w-10 h-10 rounded-full bg-rose/5 flex items-center justify-center mb-8">
+                <Heart className="w-5 h-5 text-rose fill-current" strokeWidth={1} />
+              </div>
+              
+              <h3 className="text-3xl font-display text-rose mb-4 uppercase tracking-wider">
                 {event.name}
               </h3>
-              <p className="text-muted text-sm mb-6 pb-6 border-b border-black/5 w-full">
-                {event.description}
-              </p>
-
-              <div className="space-y-4 w-full flex flex-col items-center mb-8">
-                <div className="flex flex-col items-center gap-1">
-                  <CalendarIcon className="w-5 h-5 text-gold/80 mb-1" />
-                  <p className="text-dark font-medium">{event.date}</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <Clock className="w-5 h-5 text-gold/80 mb-1" />
-                  <p className="text-dark font-medium">{event.time}</p>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                  <MapPin className="w-5 h-5 text-gold/80 mb-1" />
-                  <p className="text-dark font-medium leading-relaxed">
-                    {event.venue}
-                  </p>
-                  <p className="text-sm text-muted">{event.address}</p>
-                </div>
+              
+              <div className="flex flex-col items-center gap-1 mb-10 w-full max-w-sm">
+                <p className="text-dark font-medium leading-relaxed text-lg">
+                  {event.venue}
+                </p>
+                <p className="text-sm text-muted/80">{event.address}</p>
               </div>
 
               <motion.a
@@ -149,7 +164,7 @@ export default function EventsSection() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="mt-auto flex items-center justify-center gap-2 px-8 py-3 bg-cream hover:bg-blush text-rose border border-rose/20 rounded-full font-medium transition-colors text-sm w-full text-decoration-none"
+                className="flex items-center justify-center gap-2 px-10 py-3 bg-rose hover:bg-rose/90 text-white rounded-full font-medium transition-colors text-sm shadow-md text-decoration-none w-full sm:w-auto"
               >
                 <Navigation className="w-4 h-4" />
                 Chỉ Đường
