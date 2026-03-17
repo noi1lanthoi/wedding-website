@@ -47,8 +47,7 @@ export const events = [
     date: "05/04/2026",
     venue: "Trung Tâm Hội Nghị & Tiệc Cưới Cát Tiên",
     address: "Thôn La Sơn, Xã Hưng Lộc, TP. Huế",
-    mapUrl:
-      "https://maps.google.com/?q=Trung+Tâm+Hội+Nghị+Tiệc+Cưới+Cát+Tiên,+Hưng+Lộc,+Phú+Vang,+Thừa+Thiên+Huế",
+    mapUrl: "https://maps.app.goo.gl/RJ3tp3Mhuij7ZNDi8",
     description:
       "Sự hiện diện của Quý vị là niềm vinh hạnh cho gia đình chúng tôi",
     icon: "party",
