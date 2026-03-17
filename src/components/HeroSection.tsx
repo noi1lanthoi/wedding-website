@@ -43,8 +43,6 @@ export default function HeroSection() {
             className="object-cover"
             priority
           />
-          {/* Dimmer overlay for general readability */}
-          <div className="absolute inset-0 bg-black/30" />
           {/* Gradient at the bottom to make the names pop even more */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         </div>
