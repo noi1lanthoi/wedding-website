@@ -15,27 +15,25 @@ import UnderConstruction from "@/components/UnderConstruction";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <UnderConstruction />
+    <main className="min-h-[100dvh] relative pb-[calc(env(safe-area-inset-bottom,0px)+80px)]">
+      {/* <UnderConstruction /> */}
 
       {/* 
         NOTE: Tạm thời ẩn các component hiện tại để hiển thị trang "Web chưa hoàn thiện".
         Sẽ mở comment lại khi website đã hoàn thiện.
       */}
-      {/*
       <WelcomeEnvelope />
       <Navbar />
       <HeroSection />
+      <EventsSection />
       <CoupleSection />
       <StorySection />
-      <EventsSection />
       <GallerySection />
       <GiftSection />
       <RSVPSection />
       <Footer />
       <FloatingWishes />
       <StickyBottomBar />
-      */}
     </main>
   );
 }

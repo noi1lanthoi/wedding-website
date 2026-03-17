@@ -19,7 +19,7 @@ export default function EventsSection() {
   const days = Array.from({ length: daysInApril }, (_, i) => i + 1);
 
   return (
-    <section id="events" className="py-20 md:py-28 bg-cream relative">
+    <section id="events" className="py-20 md:py-28 bg-white relative">
       <div className="section-container">
         {/* Section Header */}
         <motion.div
