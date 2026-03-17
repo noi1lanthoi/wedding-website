@@ -95,15 +95,16 @@ export default function EventsSection() {
         </motion.div>
 
         {/* Events Grid */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16 px-4">
+        <div className="flex flex-col items-center max-w-xl mx-auto mb-16 px-4 w-full">
           {events.map((event, index) => (
             <motion.div
               key={event.id}
+              id={`event-${event.id}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="bg-white rounded-md p-8 sm:p-10 shadow-sm border border-black/5 text-center flex flex-col items-center"
+              className="bg-white rounded-md w-full p-8 sm:p-10 shadow-sm border border-black/5 text-center flex flex-col items-center"
             >
               <h3 className="text-2xl font-display text-rose mb-2">
                 {event.name}
@@ -136,7 +137,7 @@ export default function EventsSection() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="mt-auto inline-flex items-center justify-center gap-2 px-8 py-3 bg-cream hover:bg-blush text-rose border border-rose/20 rounded-full font-medium transition-colors text-sm w-full sm:w-auto text-decoration-none"
+                className="mt-auto flex items-center justify-center gap-2 px-8 py-3 bg-cream hover:bg-blush text-rose border border-rose/20 rounded-full font-medium transition-colors text-sm w-full text-decoration-none"
               >
                 <Navigation className="w-4 h-4" />
                 Chỉ Đường

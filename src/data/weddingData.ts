@@ -5,7 +5,7 @@ export const coupleData = {
   groom: {
     name: "Minh Hưng",
     fullName: "Trần Minh Hưng",
-    parents: "Ông Trần Văn Thành & Bà Mai Thị Phượng",
+    parents: "Bà Nguyễn Thị Hà",
     image: "/images/groom.jpg",
     description:
       "Một chàng trai yêu thích công nghệ và du lịch, luôn tin rằng tình yêu đích thực sẽ đến đúng lúc.",
@@ -19,7 +19,7 @@ export const coupleData = {
   bride: {
     name: "Mai Thảo",
     fullName: "Nguyễn Thị Mai Thảo",
-    parents: "Bà Nguyễn Thị Hà",
+    parents: "Ông Nguyễn Văn Thành & Bà Mai Thị Phượng",
     image: "/images/bride.jpg",
     description:
       "Cô gái yêu nghệ thuật và ẩm thực, tin rằng mỗi khoảnh khắc đều đáng để trân trọng.",
@@ -40,17 +40,6 @@ export const weddingDate = {
 };
 
 export const events = [
-  {
-    id: 1,
-    name: "Lễ Thành Hôn",
-    time: "08:00",
-    date: "05/04/2026",
-    venue: "Tư Gia",
-    address: "Thôn Hòa Vang, Xã Hưng Lộc, TP. Huế",
-    mapUrl: "https://maps.google.com/?q=Hưng+Lộc,+Phú+Vang,+Thừa+Thiên+Huế", // You can customize exact maps
-    description: "Hôn lễ được cử hành tại Tư Gia vào lúc 08 giờ 00",
-    icon: "home",
-  },
   {
     id: 2,
     name: "Tiệc Cưới Chung Vui",
