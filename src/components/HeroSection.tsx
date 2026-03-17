@@ -56,7 +56,7 @@ export default function HeroSection() {
         >
           <h1 className="font-display text-5xl sm:text-7xl md:text-8xl text-white tracking-wide relative flex flex-col items-center justify-center gap-4 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
             <span className="block">{coupleData.groom.name}</span>
-            <span className="font-script text-4xl sm:text-6xl text-gold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 drop-shadow-lg">
+            <span className="font-script text-4xl sm:text-6xl text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 drop-shadow-lg">
               &
             </span>
             <span className="block">{coupleData.bride.name}</span>
