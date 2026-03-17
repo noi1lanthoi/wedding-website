@@ -16,7 +16,7 @@ export default function StickyBottomBar() {
       initial={{ y: 100 }}
       animate={{ y: 0 }}
       transition={{ delay: 1, duration: 0.5 }}
-      className="fixed bottom-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-t border-white/10 px-4 py-3 flex items-center justify-between gap-3 text-white"
+      className="fixed bottom-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-t border-white/10 px-4 pt-3 pb-[calc(env(safe-area-inset-bottom,0px)+12px)] flex items-center justify-between gap-3 text-white"
     >
       {/* RSVP Envelope Icon */}
       <button

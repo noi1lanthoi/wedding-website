@@ -29,8 +29,8 @@ export default function FloatingWishes() {
 
       setActiveWishes((prev) => {
         const next = [...prev, newWish];
-        // Keep only the last 3 wishes to avoid clutter
-        if (next.length > 3) {
+        // Keep only the last 2 wishes to avoid clutter
+        if (next.length > 2) {
           next.shift();
         }
         return next;
@@ -43,15 +43,16 @@ export default function FloatingWishes() {
   }, []);
 
   return (
-    <div className="fixed bottom-24 left-4 z-40 pointer-events-none flex flex-col-reverse gap-3 items-start">
-      <AnimatePresence>
+    <div className="fixed bottom-24 left-4 z-40 pointer-events-none flex flex-col-reverse gap-4 items-start">
+      <AnimatePresence mode="popLayout">
         {activeWishes.map((wish) => (
           <motion.div
             key={wish.uniqueId}
-            initial={{ opacity: 0, x: -20, y: 10 }}
-            animate={{ opacity: 1, x: 0, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
+            layout
+            initial={{ opacity: 0, x: -20, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="bg-rose/80 backdrop-blur-sm text-white px-4 py-2 rounded-full text-xs font-body shadow-lg max-w-[250px] truncate"
             style={{ backgroundColor: "rgba(182, 133, 133, 0.85)" }} // Specific dusky pink from Zenlove
           >

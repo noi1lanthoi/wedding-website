@@ -45,29 +45,31 @@ export default function EventsSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-md mx-auto bg-[#FDFBF7] rounded-2xl p-6 md:p-8 shadow-md border border-gold/20 mb-16 relative overflow-hidden"
+          className="max-w-md mx-auto bg-rose rounded-2xl p-6 md:p-8 shadow-xl border border-gold/30 mb-16 relative overflow-hidden"
         >
-          {/* Decorative Floral Background Watermark */}
-          <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.05] pointer-events-none overflow-hidden">
-             <Flower2 className="w-[120%] h-[120%] text-rose" strokeWidth={1} />
-             <Flower2 className="w-[80%] h-[80%] text-gold absolute -top-1/4 -right-1/4 rotate-45" strokeWidth={1} />
+          {/* Corner Floral Decor */}
+          <div className="absolute inset-0 z-0 pointer-events-none rounded-2xl">
+            {/* Top Left Cluster */}
+            <Flower2 className="w-32 h-32 text-gold/15 absolute -top-10 -left-10 -rotate-12" strokeWidth={1} />
+            <Flower2 className="w-16 h-16 text-white/10 absolute top-12 -left-6 rotate-45" strokeWidth={1} />
+            
+            {/* Bottom Right Cluster */}
+            <Flower2 className="w-28 h-28 text-gold/15 absolute -bottom-8 -right-8 rotate-45" strokeWidth={1} />
+            <Flower2 className="w-20 h-20 text-white/10 absolute bottom-14 -right-10 -rotate-12" strokeWidth={1} />
           </div>
 
           {/* Calendar Header */}
           <div className="text-center mb-6 relative z-10 flex flex-col items-center">
-            <div className="w-10 h-10 rounded-full bg-rose/10 flex items-center justify-center mb-3">
-              <Flower2 className="w-5 h-5 text-rose" strokeWidth={1.5} />
-            </div>
-            <h3 className="font-display text-3xl text-rose mb-1">Tháng 4</h3>
-            <p className="text-gold tracking-widest text-sm font-medium uppercase">Năm 2025</p>
+            <h3 className="font-display text-4xl text-white mb-1 drop-shadow-sm">Tháng 4</h3>
+            <p className="text-gold-light tracking-widest text-sm font-medium uppercase">Năm 2025</p>
           </div>
 
           {/* Days of Week */}
-          <div className="grid grid-cols-7 text-center mb-4 border-b border-black/5 pb-2 relative z-10">
+          <div className="grid grid-cols-7 text-center mb-4 border-b border-white/20 pb-2 relative z-10">
             {["CN", "T2", "T3", "T4", "T5", "T6", "T7"].map((day, idx) => (
               <div
                 key={idx}
-                className={`text-xs font-medium ${idx === 0 || idx === 6 ? "text-rose/70" : "text-muted"}`}
+                className={`text-xs font-medium ${idx === 0 || idx === 6 ? "text-gold-light" : "text-white/80"}`}
               >
                 {day}
               </div>
@@ -75,7 +77,7 @@ export default function EventsSection() {
           </div>
 
           {/* Calendar Grid */}
-          <div className="grid grid-cols-7 gap-y-4 text-center text-sm font-body">
+          <div className="grid grid-cols-7 gap-y-4 text-center text-sm font-body relative z-10">
             {blanks.map((_, idx) => (
               <div key={`blank-${idx}`} />
             ))}
@@ -90,13 +92,13 @@ export default function EventsSection() {
                     <motion.div
                       animate={{ scale: [1, 1.1, 1] }}
                       transition={{ repeat: Infinity, duration: 2 }}
-                      className="w-8 h-8 md:w-10 md:h-10 bg-rose text-white rounded-full flex items-center justify-center shadow-md relative z-10"
+                      className="w-8 h-8 md:w-10 md:h-10 bg-white text-rose rounded-full flex items-center justify-center shadow-lg relative z-10 font-bold"
                     >
                       {day}
-                      <Heart className="absolute -bottom-2 -right-2 w-4 h-4 text-gold fill-current" />
+                      <Heart className="absolute -bottom-2 -right-2 w-5 h-5 text-gold fill-current drop-shadow-sm" />
                     </motion.div>
                   ) : (
-                    <span className="text-dark/80">{day}</span>
+                    <span className="text-white/90">{day}</span>
                   )}
                 </div>
               );

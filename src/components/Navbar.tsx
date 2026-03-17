@@ -7,11 +7,8 @@ import { coupleData } from "@/data/weddingData";
 
 const navItems = [
   { name: "Trang chủ", href: "#home" },
-  { name: "Cặp đôi", href: "#couple" },
-  { name: "Câu chuyện", href: "#story" },
-  { name: "Sự kiện", href: "#events" },
-  { name: "Album", href: "#gallery" },
-  { name: "RSVP", href: "#rsvp" },
+  { name: "Chỉ đường tới nhà hàng", href: "#event-2" },
+  { name: "Gửi lời chúc đến dâu rể", href: "#gift" },
 ];
 
 export default function Navbar() {
@@ -33,32 +30,36 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg py-3"
-          : "bg-transparent py-5"
+          ? "bg-white/95 backdrop-blur-md shadow-lg pb-3 pt-[calc(max(env(safe-area-inset-top,0px),12px))]"
+          : "bg-transparent pb-5 pt-[calc(max(env(safe-area-inset-top,0px),20px))]"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <motion.a
-            href="#home"
-            className="flex items-center gap-2 text-2xl font-script no-underline"
-            whileHover={{ scale: 1.05 }}
-          >
-            <span className={isScrolled ? "text-gold" : "text-white"}>
-              {coupleData.groom.name}
-            </span>
-            <Heart
-              className="w-5 h-5 fill-current"
-              style={{ color: "#D4A5A5" }}
-            />
-            <span className={isScrolled ? "text-gold" : "text-white"}>
-              {coupleData.bride.name}
-            </span>
-          </motion.a>
+        <div className="flex items-center justify-between w-full">
+          {/* Mobile Layout: Spacer, Center Logo, Right Hamburger */}
+          <div className="flex-1 md:hidden" />
+          
+          <div className="flex-shrink-0 flex justify-center z-10 md:justify-start md:mr-8">
+            <motion.a
+              href="#home"
+              className="flex items-center gap-2 text-2xl font-script no-underline whitespace-nowrap"
+              whileHover={{ scale: 1.05 }}
+            >
+              <span className={isScrolled ? "text-gold" : "text-white"}>
+                {coupleData.groom.name}
+              </span>
+              <Heart
+                className="w-5 h-5 fill-current"
+                style={{ color: "#D4A5A5" }}
+              />
+              <span className={isScrolled ? "text-gold" : "text-white"}>
+                {coupleData.bride.name}
+              </span>
+            </motion.a>
+          </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex flex-1 items-center justify-end gap-8">
             {navItems.map((item, index) => (
               <motion.a
                 key={item.name}
@@ -75,21 +76,23 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg bg-transparent border-none cursor-pointer"
-          >
-            {isMobileMenuOpen ? (
-              <X
-                className={`w-6 h-6 ${isScrolled ? "text-dark" : "text-white"}`}
-              />
-            ) : (
-              <Menu
-                className={`w-6 h-6 ${isScrolled ? "text-dark" : "text-white"}`}
-              />
-            )}
-          </button>
+          {/* Mobile Menu Button Tracker */}
+          <div className="flex-1 md:hidden flex justify-end">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 rounded-lg bg-transparent border-none cursor-pointer"
+            >
+              {isMobileMenuOpen ? (
+                <X
+                  className={`w-6 h-6 ${isScrolled ? "text-dark" : "text-white"}`}
+                />
+              ) : (
+                <Menu
+                  className={`w-6 h-6 ${isScrolled ? "text-dark" : "text-white"}`}
+                />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}

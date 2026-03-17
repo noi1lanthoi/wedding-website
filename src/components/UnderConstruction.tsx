@@ -38,9 +38,18 @@ export default function UnderConstruction() {
 
         <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#d4a373] to-transparent mb-6 opacity-60"></div>
 
-        <p className="text-xl md:text-2xl font-light text-[#5a5a5a] tracking-wide mb-10">
+        <p className="text-xl md:text-2xl font-light text-[#5a5a5a] tracking-wide mb-8">
           Web chưa hoàn thiện
         </p>
+
+        {/* QR Code */}
+        <div className="bg-white p-4 rounded-xl shadow-lg mb-10 w-48 h-48 relative z-20 flex items-center justify-center">
+          <img 
+            src="/qrcode.png" 
+            alt="QR Code" 
+            className="w-full h-full object-contain"
+          />
+        </div>
 
         {/* Animated dots */}
         <div className="flex justify-center gap-3">
