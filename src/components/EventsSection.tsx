@@ -6,14 +6,14 @@ import {
   Heart,
   Flower2,
 } from "lucide-react";
-import { events, dressCode } from "@/data/weddingData";
+import { events } from "@/data/weddingData";
 
 export default function EventsSection() {
-  // April 2025 calendar calculation
-  // April 1, 2025 is a Tuesday (index 2 for Mon-Sun week, or index 2 for Sun-Sat week? Sun=0, Mon=1, Tue=2)
+  // April 2026 calendar calculation
   const daysInApril = 30;
-  const startDay = 2; // Tuesday
-  const blanks = Array(startDay).fill(null);
+  // April 1, 2026 is a Wednesday. Let's start week from Sunday.
+  const startDay = 3; // 0=Sun, 1=Mon, 2=Tue, 3=Wed
+  const blanks = Array.from({ length: startDay });
   const days = Array.from({ length: daysInApril }, (_, i) => i + 1);
 
   return (
@@ -58,7 +58,7 @@ export default function EventsSection() {
           {/* Calendar Header */}
           <div className="text-center mb-6 relative z-10 flex flex-col items-center">
             <h3 className="font-display text-4xl text-white mb-1 drop-shadow-sm">Tháng 4</h3>
-            <p className="text-gold-light tracking-widest text-sm font-medium uppercase">Năm 2025</p>
+            <p className="text-gold-light tracking-widest text-sm font-medium uppercase">Năm 2026</p>
           </div>
 
           {/* Days of Week */}
@@ -123,7 +123,7 @@ export default function EventsSection() {
               </p>
               
               <h4 className="font-display text-2xl sm:text-3xl text-dark mb-6">
-                THỨ BẢY
+                CHỦ NHẬT
               </h4>
               
               {/* Date Layout */}
@@ -135,12 +135,12 @@ export default function EventsSection() {
                   05
                 </div>
                 <div className="flex-1 text-left">
-                  <span className="text-rose text-xs sm:text-sm font-medium tracking-widest uppercase">Năm 2025</span>
+                  <span className="text-rose text-xs sm:text-sm font-medium tracking-widest uppercase">Năm 2026</span>
                 </div>
               </div>
               
               <p className="text-muted text-sm italic mb-8">
-                (Tức ngày 08 tháng 03 năm Ất Tỵ)
+                (Tức ngày 18 tháng 02 năm Bính Ngọ)
               </p>
               
               <div className="w-10 h-10 rounded-full bg-rose/5 flex items-center justify-center mb-8">
@@ -172,41 +172,6 @@ export default function EventsSection() {
             </motion.div>
           ))}
         </div>
-
-        {/* Dress Code Box */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-2xl mx-auto text-center mt-20"
-        >
-          <h4 className="text-xl font-display text-rose mb-4 uppercase tracking-widest">
-            Dress Code
-          </h4>
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-            {dressCode.colors.map((color) => (
-              <div key={color} className="flex flex-col items-center gap-2">
-                <div
-                  className="w-10 h-10 rounded-full border border-black/10 shadow-sm"
-                  style={{
-                    background:
-                      color === "Emerald Green"
-                        ? "#4D5E4D"
-                        : color === "Mint"
-                          ? "#8A9A8A"
-                          : color === "Cream"
-                            ? "#F1EFE7"
-                            : "#FFFFFF",
-                  }}
-                />
-                <span className="text-xs text-muted font-light tracking-wide">
-                  {color}
-                </span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );
