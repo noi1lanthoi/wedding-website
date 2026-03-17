@@ -7,6 +7,7 @@ import {
   Calendar as CalendarIcon,
   Navigation,
   Heart,
+  Flower2,
 } from "lucide-react";
 import { events, dressCode } from "@/data/weddingData";
 
@@ -44,21 +45,21 @@ export default function EventsSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-md mx-auto bg-white rounded-lg p-6 md:p-8 shadow-sm border border-black/5 mb-16 relative overflow-hidden"
+          className="max-w-md mx-auto bg-[#FDFBF7] rounded-2xl p-6 md:p-8 shadow-md border border-gold/20 mb-16 relative overflow-hidden"
         >
-          {/* Decorative Floral Background Pattern */}
-          <div 
-            className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234D5E4D' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-              backgroundSize: '30px 30px'
-            }}
-          />
+          {/* Decorative Floral Background Watermark */}
+          <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.05] pointer-events-none overflow-hidden">
+             <Flower2 className="w-[120%] h-[120%] text-rose" strokeWidth={1} />
+             <Flower2 className="w-[80%] h-[80%] text-gold absolute -top-1/4 -right-1/4 rotate-45" strokeWidth={1} />
+          </div>
 
           {/* Calendar Header */}
-          <div className="text-center mb-6 relative z-10">
-            <h3 className="font-display text-2xl text-rose mb-1">Tháng 4</h3>
-            <p className="text-gold tracking-widest text-sm">2025</p>
+          <div className="text-center mb-6 relative z-10 flex flex-col items-center">
+            <div className="w-10 h-10 rounded-full bg-rose/10 flex items-center justify-center mb-3">
+              <Flower2 className="w-5 h-5 text-rose" strokeWidth={1.5} />
+            </div>
+            <h3 className="font-display text-3xl text-rose mb-1">Tháng 4</h3>
+            <p className="text-gold tracking-widest text-sm font-medium uppercase">Năm 2025</p>
           </div>
 
           {/* Days of Week */}
