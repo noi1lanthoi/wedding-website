@@ -67,13 +67,13 @@ export default function HeroSection() {
       {/* 2. Content Below Fold */}
       <div className="w-full bg-cream py-16 px-4 flex flex-col items-center relative z-20">
         
-        {/* Parents Info (Moved Below Image) */}
+        {/* Parents Info (Card Style) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="w-full max-w-2xl mx-auto flex justify-between items-start text-center mb-16"
+          className="w-full max-w-2xl mx-auto flex justify-between items-start text-center mb-16 bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-black/5"
         >
           <div className="flex-1">
             <h3 className="font-display text-2xl text-rose mb-2">Nhà Trai</h3>
@@ -83,7 +83,7 @@ export default function HeroSection() {
           </div>
 
           {/* Decorative divider */}
-          <div className="w-px h-20 bg-gold/40 mx-4 mt-2" />
+          <div className="w-px h-20 bg-gold/40 mx-2 sm:mx-6 mt-2" />
 
           <div className="flex-1">
             <h3 className="font-display text-2xl text-rose mb-2">Nhà Gái</h3>
