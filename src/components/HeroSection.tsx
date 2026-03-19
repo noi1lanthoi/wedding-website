@@ -182,6 +182,44 @@ export default function HeroSection() {
           </p>
         </motion.div>
 
+        {/* Highlight Image Grid */}
+        <div className="w-full max-w-4xl mx-auto px-4 mb-20 sm:mb-28">
+          <div className="flex items-start justify-center gap-3 sm:gap-6">
+            {/* Left Image */}
+            <motion.div 
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.8 }}
+               className="w-1/3 aspect-[3/4] relative rounded-xl overflow-hidden shadow-sm border-[4px] border-white/50"
+            >
+              <Image src="/images/111A6623.jpg" alt="Gallery Left" fill className="object-cover" />
+            </motion.div>
+            
+            {/* Center Image (Taller & offset down) */}
+            <motion.div
+               initial={{ opacity: 0, y: 30 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.8, delay: 0.2 }}
+               className="w-1/3 aspect-[2/3] relative rounded-xl overflow-hidden shadow-md z-10 mt-8 sm:mt-12 border-[4px] border-white/50"
+            >
+              <Image src="/images/111A6671-copy.jpg" alt="Gallery Center" fill className="object-cover" />
+            </motion.div>
+
+            {/* Right Image */}
+            <motion.div 
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.8, delay: 0.4 }}
+               className="w-1/3 aspect-[3/4] relative rounded-xl overflow-hidden shadow-sm border-[4px] border-white/50"
+            >
+              <Image src="/images/111A6653.jpg" alt="Gallery Right" fill className="object-cover" />
+            </motion.div>
+          </div>
+        </div>
+
         {/* Countdown Squares */}
         <motion.div
           initial={{ opacity: 0, x: 100 }}
