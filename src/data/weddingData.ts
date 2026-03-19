@@ -10,10 +10,10 @@ export const coupleData = {
     description:
       "Một chàng trai yêu thích công nghệ và du lịch, luôn tin rằng tình yêu đích thực sẽ đến đúng lúc.",
     bankAccount: {
-      bankName: "TPBank",
-      accountNumber: "0123456789",
-      accountHolder: " TRAN MINH HUNG",
-      qrCode: "https://img.vietqr.io/image/TPBank-0123456789-compact.png",
+      bankName: "Techcombank",
+      accountNumber: "19073587776012",
+      accountHolder: "TRAN MINH HUNG",
+      qrCode: "/images/qr-groom.jpg",
     },
   },
   bride: {
@@ -122,20 +122,7 @@ export const gallery = [
   { id: 30, src: "/images/gallery/111A8213.jpg", alt: "Album Photo 30" },
 ];
 
-export const bankAccounts = [
-  {
-    name: "Trần Minh Hưng",
-    bank: "Vietcombank",
-    accountNumber: "1234567890",
-    qrCode: "/images/qr-groom.png",
-  },
-  {
-    name: "Nguyễn Thị Mai Thảo",
-    bank: "Techcombank",
-    accountNumber: "0987654321",
-    qrCode: "/images/qr-bride.png",
-  },
-];
+
 
 export const dressCode = {
   colors: ["Emerald Green", "Mint", "Cream", "White"],
