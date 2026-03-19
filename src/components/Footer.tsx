@@ -19,8 +19,8 @@ export default function Footer() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           className="text-center flex flex-col items-center justify-center max-w-2xl mx-auto"
         >
           {/* Couple Names */}
@@ -56,7 +56,7 @@ export default function Footer() {
         <motion.button
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
           whileHover={{ y: -4 }}
           whileTap={{ scale: 0.95 }}
           onClick={scrollToTop}

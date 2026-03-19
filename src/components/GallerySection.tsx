@@ -34,10 +34,10 @@ export default function GallerySection() {
       <div className="section-container">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           className="text-center mb-16 flex flex-col items-center justify-center gap-4"
         >
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-display text-dark tracking-widest uppercase flex items-center justify-center gap-3">
@@ -66,10 +66,10 @@ export default function GallerySection() {
             return (
               <motion.div
                 key={image.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: (index % 3) * 0.1 }}
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+                transition={{ duration: 1.2, ease: "easeOut", delay: (index % 3) * 0.1 }}
                 className="break-inside-avoid mb-8"
               >
                 <motion.div

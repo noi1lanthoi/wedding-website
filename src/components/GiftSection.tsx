@@ -27,11 +27,11 @@ interface BankCardProps {
 
 const BankCard = ({ person, type, copied, handleCopy }: BankCardProps) => (
   <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
+    initial={{ opacity: 0, x: type === "groom" ? -100 : 100 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true, margin: "0px 0px -15% 0px" }}
     whileHover={{ y: -2 }}
-    transition={{ duration: 0.5 }}
+    transition={{ duration: 1.2, ease: "easeOut" }}
     className="bg-white p-8 rounded-sm shadow-sm border border-black/5 relative group transition-all duration-300 w-full"
   >
     {/* Clean Scrapbook tape */}
@@ -116,10 +116,10 @@ export default function GiftSection() {
     <section id="gift" className="py-20 md:py-28 bg-transparent relative">
       <div className="container mx-auto px-4 section-container">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           className="text-center mb-16"
         >
           <span className="text-rose text-sm tracking-[3px] uppercase block mb-4">

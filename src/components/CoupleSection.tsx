@@ -11,10 +11,10 @@ export default function CoupleSection() {
       <div className="section-container relative">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           className="text-center mb-16"
         >
           <span className="text-rose text-sm tracking-[3px] uppercase block mb-4">
@@ -29,10 +29,10 @@ export default function CoupleSection() {
         <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 max-w-5xl mx-auto relative px-4">
           {/* Groom Card */}
           <motion.div
-            initial={{ opacity: 0, y: 30, rotate: -5 }}
-            whileInView={{ opacity: 1, y: 0, rotate: -2 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, x: -100, rotate: -15 }}
+            whileInView={{ opacity: 1, x: 0, rotate: -2 }}
+            viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
             className="flex flex-col items-center w-full max-w-sm"
           >
             {/* Polaroid Frame */}
@@ -71,8 +71,8 @@ export default function CoupleSection() {
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+            transition={{ duration: 1.2, ease: "easeOut", delay: 0.4 }}
             className="flex items-center justify-center -my-4 md:my-0 z-10"
           >
             <div className="bg-cream p-4 rounded-full border border-gold/20 shadow-sm md:border-none md:shadow-none md:bg-transparent">
@@ -85,10 +85,10 @@ export default function CoupleSection() {
 
           {/* Bride Card */}
           <motion.div
-            initial={{ opacity: 0, y: 30, rotate: 5 }}
-            whileInView={{ opacity: 1, y: 0, rotate: 2 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, x: 100, rotate: 15 }}
+            whileInView={{ opacity: 1, x: 0, rotate: 2 }}
+            viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
             className="flex flex-col items-center w-full max-w-sm"
           >
             {/* Polaroid Frame */}

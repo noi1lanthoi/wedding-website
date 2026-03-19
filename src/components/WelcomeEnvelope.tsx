@@ -55,7 +55,7 @@ export default function WelcomeEnvelope() {
             opacity: isOpen ? 0 : 1,
             y: isOpen ? 100 : 0,
           }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
         >
           {/* Envelope Flap (Top triangle) */}
           <motion.div
@@ -81,7 +81,7 @@ export default function WelcomeEnvelope() {
               opacity: isOpen ? 0 : 1,
               scale: isOpen ? 1.5 : 1,
             }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
           >
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gold shadow-lg flex items-center justify-center border-4 border-dusty-rose relative group-hover:scale-105 transition-transform duration-300">
               <div className="absolute inset-0 rounded-full border border-white/20" />

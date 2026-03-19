@@ -21,10 +21,10 @@ export default function EventsSection() {
       <div className="section-container">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           className="text-center mb-16"
         >
           <span className="text-rose text-sm tracking-[3px] uppercase block mb-4">
@@ -38,10 +38,10 @@ export default function EventsSection() {
 
         {/* Custom Calendar Section */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           className="max-w-md mx-auto bg-rose rounded-2xl p-6 md:p-8 shadow-xl border border-gold/30 mb-16 relative overflow-hidden"
         >
           {/* Corner Floral Decor */}
@@ -109,10 +109,10 @@ export default function EventsSection() {
             <motion.div
               key={event.id}
               id={`event-${event.id}`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+              transition={{ duration: 1.2, ease: "easeOut", delay: index * 0.2 }}
               className="bg-white rounded-xl w-full p-8 sm:p-12 shadow-sm border border-gold/10 text-center flex flex-col items-center relative overflow-hidden"
             >
               {/* Subtle top floral decoration */}

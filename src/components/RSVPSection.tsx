@@ -140,10 +140,10 @@ export default function RSVPSection() {
       <div className="section-container">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           className="text-center mb-16"
         >
           <span className="text-rose text-sm tracking-[3px] uppercase block mb-4">
@@ -158,10 +158,10 @@ export default function RSVPSection() {
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-start px-4">
           {/* RSVP Form */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
             className="w-full relative"
           >
             {/* Background Scrapbook Card */}
@@ -353,10 +353,10 @@ export default function RSVPSection() {
 
           {/* Wishes Wall */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
             className="w-full font-body"
           >
             <div className="flex items-center gap-4 mb-8">

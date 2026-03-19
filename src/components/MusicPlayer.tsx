@@ -20,7 +20,7 @@ export default function MusicPlayer() {
       rotate: Math.random() * 360,
       duration: 2 + Math.random(),
     }));
-    setMusicNotes(randomNotes);
+    setTimeout(() => setMusicNotes(randomNotes), 0);
   }, []);
 
   useEffect(() => {
@@ -29,20 +29,36 @@ export default function MusicPlayer() {
     const audio = audioRef.current;
     if (audio) {
       audio.volume = 0.5;
-      // Thử autoplay
-      const playPromise = audio.play();
-      console.log(playPromise, "playPromise");
+      
+      const playAudio = async () => {
+        try {
+          await audio.play();
+          setIsPlaying(true);
+        } catch (error) {
+          console.log("Autoplay prevented:", error);
+          setIsPlaying(false);
+          
+          // Thêm listener cho tương tác đầu tiên của user để bật nhạc
+          const playOnInteract = async () => {
+            try {
+              await audio.play();
+              setIsPlaying(true);
+              // Xóa event listeners sau khi đã play thành công
+              ["click", "touchstart", "scroll", "keydown"].forEach(evt => 
+                document.removeEventListener(evt, playOnInteract)
+              );
+            } catch (err) {
+              console.log("Still prevented:", err);
+            }
+          };
 
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            setIsPlaying(true);
-          })
-          .catch((error) => {
-            console.log("Autoplay prevented:", error);
-            setIsPlaying(false);
-          });
-      }
+          ["click", "touchstart", "scroll", "keydown"].forEach(evt => 
+            document.addEventListener(evt, playOnInteract, { once: true })
+          );
+        }
+      };
+
+      playAudio();
     }
   }, []);
 
@@ -53,12 +69,12 @@ export default function MusicPlayer() {
       } else {
         audioRef.current.play();
       }
-      setIsPlaying(!isPlaying);
+      setTimeout(() => setIsPlaying(!isPlaying), 0);
     }
   };
 
   return (
-    <div className="fixed bottom-6 left-6 z-50">
+    <div className="fixed bottom-24 md:bottom-8 right-4 md:right-6 z-60">
       {/* Hidden Audio Element */}
       <audio ref={audioRef} src="/music/wedding-song.mp3" loop preload="auto" />
 
@@ -141,13 +157,13 @@ export default function MusicPlayer() {
         {/* Helper Tooltip */}
         {!isPlaying && (
           <motion.div
-            initial={{ opacity: 0, x: -10 }}
+            initial={{ opacity: 0, x: 10 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -10 }}
-            className="absolute left-full top-1/2 -translate-y-1/2 ml-4 bg-white/90 backdrop-blur px-3 py-1.5 rounded-lg shadow-md text-xs font-medium text-dark whitespace-nowrap pointer-events-none hidden md:block"
+            exit={{ opacity: 0, x: 10 }}
+            className="absolute right-full top-1/2 -translate-y-1/2 mr-4 bg-white/90 backdrop-blur px-3 py-1.5 rounded-lg shadow-md text-xs font-medium text-dark whitespace-nowrap pointer-events-none hidden md:block"
           >
             Bật nhạc nền 🎵
-            <div className="absolute left-0 top-1/2 -translate-x-1 -translate-y-1/2 w-2 h-2 bg-white/90 rotate-45" />
+            <div className="absolute right-0 top-1/2 translate-x-1 -translate-y-1/2 w-2 h-2 bg-white/90 rotate-45" />
           </motion.div>
         )}
       </div>

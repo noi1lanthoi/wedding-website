@@ -14,10 +14,10 @@ export default function StorySection() {
       <div className="section-container relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           className="text-center mb-16 md:mb-24"
         >
           <span className="text-gold text-sm tracking-[3px] uppercase block mb-4">
@@ -49,10 +49,10 @@ export default function StorySection() {
             return (
               <motion.div
                 key={story.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
+                initial={{ opacity: 0, x: alignLeft ? -100 : 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
                 className={`w-full flex flex-col ${alignLeft ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-8 md:gap-16`}
               >
                 {/* Polaroid Image */}

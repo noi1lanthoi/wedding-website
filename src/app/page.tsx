@@ -1,8 +1,6 @@
 import WelcomeEnvelope from "@/components/WelcomeEnvelope";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import CoupleSection from "@/components/CoupleSection";
-import StorySection from "@/components/StorySection";
 import EventsSection from "@/components/EventsSection";
 import GallerySection from "@/components/GallerySection";
 import RSVPSection from "@/components/RSVPSection";
@@ -11,7 +9,7 @@ import Footer from "@/components/Footer";
 import StickyBottomBar from "@/components/StickyBottomBar";
 import FloatingWishes from "@/components/FloatingWishes";
 
-import UnderConstruction from "@/components/UnderConstruction";
+
 
 export default function Home() {
   return (
@@ -24,15 +22,18 @@ export default function Home() {
       */}
       <WelcomeEnvelope />
       <Navbar />
-      <HeroSection />
-      <EventsSection />
-      <CoupleSection />
-      <StorySection />
-      <GallerySection />
-      <GiftSection />
-      <RSVPSection />
-      <Footer />
-      <FloatingWishes />
+      
+      <div className="w-full overflow-x-hidden">
+        <HeroSection />
+        <EventsSection />
+
+        <GallerySection />
+        <GiftSection />
+        <RSVPSection />
+        <Footer />
+        <FloatingWishes />
+      </div>
+
       <StickyBottomBar />
     </main>
   );
