@@ -40,9 +40,9 @@ export default function GallerySection() {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="text-center mb-16 flex flex-col items-center justify-center gap-4"
         >
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-display text-dark tracking-widest uppercase flex items-center justify-center gap-3">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display text-dark tracking-wider sm:tracking-widest uppercase flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-center px-2">
             Album
-            <span className="font-script text-rose lowercase mt-4 italic">
+            <span className="font-script text-rose lowercase mt-2 sm:mt-4 italic">
               of
             </span>
             Love
