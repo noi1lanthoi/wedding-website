@@ -24,10 +24,10 @@ export const coupleData = {
     description:
       "Cô gái yêu nghệ thuật và ẩm thực, tin rằng mỗi khoảnh khắc đều đáng để trân trọng.",
     bankAccount: {
-      bankName: "Vietcombank",
-      accountNumber: "9876543210",
+      bankName: "TPBank",
+      accountNumber: "01966768201",
       accountHolder: "NGUYEN THI MAI THAO",
-      qrCode: "https://img.vietqr.io/image/VCB-9876543210-compact.png",
+      qrCode: "/images/qr-bride.jpg",
     },
   },
 };
@@ -121,8 +121,6 @@ export const gallery = [
   { id: 29, src: "/images/gallery/111A8118.jpg", alt: "Album Photo 29" },
   { id: 30, src: "/images/gallery/111A8213.jpg", alt: "Album Photo 30" },
 ];
-
-
 
 export const dressCode = {
   colors: ["Emerald Green", "Mint", "Cream", "White"],
