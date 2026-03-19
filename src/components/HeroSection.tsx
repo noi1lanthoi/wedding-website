@@ -51,9 +51,12 @@ export default function HeroSection() {
         <motion.div
            initial={{ opacity: 0, scale: 0.95 }}
            animate={{ opacity: 1, scale: 1 }}
-           transition={{ duration: 1, delay: 0.3 }}
+           transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
            className="text-center w-full relative z-10 pb-8"
         >
+          <span className="font-script text-4xl sm:text-5xl text-gold block mb-4 drop-shadow-md">
+            Save the Date
+          </span>
           <h1 className="font-display text-5xl sm:text-7xl md:text-8xl text-white tracking-wide relative flex flex-col items-center justify-center gap-4 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
             <span className="block">{coupleData.groom.name}</span>
             <span className="font-script text-4xl sm:text-6xl text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 drop-shadow-lg">
@@ -67,38 +70,105 @@ export default function HeroSection() {
       {/* 2. Content Below Fold */}
       <div className="w-full bg-cream py-16 px-4 flex flex-col items-center relative z-20">
         
-        {/* Parents Info (Card Style) */}
+        {/* Romantic Quote */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-          className="w-full max-w-2xl mx-auto flex justify-between items-start text-center mb-16 bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-black/5"
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="text-center mb-12 px-4 flex flex-col items-center"
         >
-          <div className="flex-1">
-            <h3 className="font-display text-2xl text-rose mb-2">Nhà Trai</h3>
-            <p className="font-body text-sm text-muted whitespace-pre-line leading-relaxed">
-              {coupleData.groom.parents.replace(" & ", "\n")}
+          <div className="inline-block text-left">
+            <p className="font-script text-[22px] md:text-3xl text-rose/90 mb-2 italic pl-4">
+              &quot;Hôn nhân là chuyện cả đời,
             </p>
-          </div>
-
-          {/* Decorative divider */}
-          <div className="w-px h-20 bg-gold/40 mx-2 sm:mx-6 mt-2" />
-
-          <div className="flex-1">
-            <h3 className="font-display text-2xl text-rose mb-2">Nhà Gái</h3>
-            <p className="font-body text-sm text-muted whitespace-pre-line leading-relaxed">
-              {coupleData.bride.parents.replace(" & ", "\n")}
+            <p className="font-script text-[22px] md:text-3xl text-rose/90 italic">
+              Yêu người vừa ý, cưới người mình thương...&quot;
             </p>
           </div>
         </motion.div>
 
+        {/* Zigzag Layout for Families & Couple */}
+        <div className="w-full max-w-5xl mx-auto flex flex-col gap-12 md:gap-20 mb-20 px-4">
+          
+          {/* Groom Block */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+            transition={{ duration: 1 }}
+            className="flex flex-col md:flex-row items-stretch bg-white rounded-xl shadow-sm border border-black/5 overflow-hidden"
+          >
+            {/* Groom Image (Left) */}
+            <div className="w-full md:w-1/2 aspect-3/4 md:aspect-4/5 relative">
+              <Image 
+                src="/images/groom-portrait.jpg" 
+                alt={coupleData.groom.name} 
+                fill 
+                className="object-cover"
+              />
+            </div>
+            {/* Groom Info (Right) */}
+            <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col items-center justify-center text-center bg-[#fdfbf7]">
+              <h3 className="font-display text-xs md:text-sm tracking-[0.3em] font-bold text-dark uppercase mb-4">Nhà Trai</h3>
+              <div className="font-display text-lg md:text-xl text-dark uppercase font-semibold leading-[1.8] mb-8">
+                {coupleData.groom.parents.split('&').map((line, i) => (
+                  <span key={i} className="block">{line.trim()}</span>
+                ))}
+              </div>
+              
+              <div className="w-12 h-px bg-gold/40 mb-8" />
+              
+              <h4 className="font-display text-xs text-dark/50 uppercase tracking-[0.2em] mb-4">Chú Rể</h4>
+              <p className="font-script text-5xl md:text-6xl text-dark">
+                {coupleData.groom.name}
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Bride Block */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+            transition={{ duration: 1 }}
+            className="flex flex-col md:flex-row-reverse items-stretch bg-white rounded-xl shadow-sm border border-black/5 overflow-hidden"
+          >
+            {/* Bride Image (Right) */}
+            <div className="w-full md:w-1/2 aspect-3/4 md:aspect-4/5 relative">
+              <Image 
+                src="/images/111A6301.jpg" 
+                alt={coupleData.bride.name} 
+                fill 
+                className="object-cover"
+              />
+            </div>
+            {/* Bride Info (Left) */}
+            <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col items-center justify-center text-center bg-[#fdfbf7]">
+              <h3 className="font-display text-xs md:text-sm tracking-[0.3em] font-bold text-dark uppercase mb-4">Nhà Gái</h3>
+              <div className="font-display text-lg md:text-xl text-dark uppercase font-semibold leading-[1.8] mb-8">
+                {coupleData.bride.parents.split('&').map((line, i) => (
+                  <span key={i} className="block">{line.trim()}</span>
+                ))}
+              </div>
+              
+              <div className="w-12 h-px bg-gold/40 mb-8" />
+              
+              <h4 className="font-display text-xs text-dark/50 uppercase tracking-[0.2em] mb-4">Cô Dâu</h4>
+              <p className="font-script text-5xl md:text-6xl text-dark">
+                {coupleData.bride.name}
+              </p>
+            </div>
+          </motion.div>
+          
+        </div>
+
         {/* Invitation Text */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           className="text-center mb-12"
         >
           <p className="text-muted tracking-[3px] uppercase text-sm mb-4">
@@ -114,10 +184,10 @@ export default function HeroSection() {
 
         {/* Countdown Squares */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+          transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
           className="w-full max-w-md mx-auto"
         >
           <h3 className="font-script text-4xl text-rose text-center mb-6">
