@@ -132,7 +132,7 @@ export default function GallerySection() {
                 e.stopPropagation();
                 goToPrevious();
               }}
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors p-2 bg-black/30 rounded-full border-none cursor-pointer"
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors p-2 bg-black/30 rounded-full border-none cursor-pointer z-50"
             >
               <ChevronLeft className="w-8 h-8" />
             </button>
@@ -142,7 +142,7 @@ export default function GallerySection() {
                 e.stopPropagation();
                 goToNext();
               }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors p-2 bg-black/30 rounded-full border-none cursor-pointer"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white transition-colors p-2 bg-black/30 rounded-full border-none cursor-pointer z-50"
             >
               <ChevronRight className="w-8 h-8" />
             </button>

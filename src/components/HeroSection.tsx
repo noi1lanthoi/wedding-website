@@ -31,13 +31,16 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section id="home" className="relative flex flex-col items-center justify-start w-full">
+    <section
+      id="home"
+      className="relative flex flex-col items-center justify-start w-full"
+    >
       {/* 1. Hero Block (Full Screen Image) */}
       <div className="relative w-full h-[100dvh] flex flex-col justify-end items-center px-4 pb-12 overflow-hidden">
         {/* Background Image & Overlays */}
         <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
           <Image
-            src="/images/hero-main.jpg"
+            src="/images/hero-main.webp"
             alt="Couple Background"
             fill
             className="object-cover"
@@ -49,10 +52,10 @@ export default function HeroSection() {
 
         {/* Main Big Names (Bottom of the image) */}
         <motion.div
-           initial={{ opacity: 0, scale: 0.95 }}
-           animate={{ opacity: 1, scale: 1 }}
-           transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
-           className="text-center w-full relative z-10 pb-8"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
+          className="text-center w-full relative z-10 pb-8"
         >
           <span className="font-script text-4xl sm:text-5xl text-gold block mb-4 drop-shadow-md">
             Save the Date
@@ -69,7 +72,6 @@ export default function HeroSection() {
 
       {/* 2. Content Below Fold */}
       <div className="w-full bg-cream py-10 px-4 flex flex-col items-center relative z-20">
-        
         {/* Romantic Quote */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -90,7 +92,6 @@ export default function HeroSection() {
 
         {/* Zigzag Layout for Families & Couple */}
         <div className="w-full max-w-5xl mx-auto flex flex-col gap-12 md:gap-10 mb-10 px-4">
-          
           {/* Groom Block */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -101,25 +102,31 @@ export default function HeroSection() {
           >
             {/* Groom Image (Left) */}
             <div className="w-full md:w-1/2 aspect-3/4 md:aspect-4/5 relative">
-              <Image 
-                src="/images/groom-portrait.jpg" 
-                alt={coupleData.groom.name} 
-                fill 
+              <Image
+                src="/images/groom-portrait.webp"
+                alt={coupleData.groom.name}
+                fill
                 className="object-cover"
               />
             </div>
             {/* Groom Info (Right) */}
             <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col items-center justify-center text-center bg-[#fdfbf7]">
-              <h3 className="font-display text-xs md:text-sm tracking-[0.3em] font-bold text-dark uppercase mb-4">Nhà Trai</h3>
+              <h3 className="font-display text-xs md:text-sm tracking-[0.3em] font-bold text-dark uppercase mb-4">
+                Nhà Trai
+              </h3>
               <div className="font-display text-lg md:text-xl text-dark uppercase font-semibold leading-[1.8] mb-8">
-                {coupleData.groom.parents.split('&').map((line, i) => (
-                  <span key={i} className="block">{line.trim()}</span>
+                {coupleData.groom.parents.split("&").map((line, i) => (
+                  <span key={i} className="block">
+                    {line.trim()}
+                  </span>
                 ))}
               </div>
-              
+
               <div className="w-12 h-px bg-gold/40 mb-8" />
-              
-              <h4 className="font-display text-xs text-dark/50 uppercase tracking-[0.2em] mb-4">Chú Rể</h4>
+
+              <h4 className="font-display text-xs text-dark/50 uppercase tracking-[0.2em] mb-4">
+                Chú Rể
+              </h4>
               <p className="font-script text-5xl md:text-6xl text-dark">
                 {coupleData.groom.name}
               </p>
@@ -136,31 +143,36 @@ export default function HeroSection() {
           >
             {/* Bride Image (Right) */}
             <div className="w-full md:w-1/2 aspect-3/4 md:aspect-4/5 relative">
-              <Image 
-                src="/images/111A6301.jpg" 
-                alt={coupleData.bride.name} 
-                fill 
+              <Image
+                src="/images/111A6301.webp"
+                alt={coupleData.bride.name}
+                fill
                 className="object-cover"
               />
             </div>
             {/* Bride Info (Left) */}
             <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col items-center justify-center text-center bg-[#fdfbf7]">
-              <h3 className="font-display text-xs md:text-sm tracking-[0.3em] font-bold text-dark uppercase mb-4">Nhà Gái</h3>
+              <h3 className="font-display text-xs md:text-sm tracking-[0.3em] font-bold text-dark uppercase mb-4">
+                Nhà Gái
+              </h3>
               <div className="font-display text-lg md:text-xl text-dark uppercase font-semibold leading-[1.8] mb-8">
-                {coupleData.bride.parents.split('&').map((line, i) => (
-                  <span key={i} className="block">{line.trim()}</span>
+                {coupleData.bride.parents.split("&").map((line, i) => (
+                  <span key={i} className="block">
+                    {line.trim()}
+                  </span>
                 ))}
               </div>
-              
+
               <div className="w-12 h-px bg-gold/40 mb-8" />
-              
-              <h4 className="font-display text-xs text-dark/50 uppercase tracking-[0.2em] mb-4">Cô Dâu</h4>
+
+              <h4 className="font-display text-xs text-dark/50 uppercase tracking-[0.2em] mb-4">
+                Cô Dâu
+              </h4>
               <p className="font-script text-5xl md:text-6xl text-dark">
                 {coupleData.bride.name}
               </p>
             </div>
           </motion.div>
-          
         </div>
 
         {/* Invitation Text */}
@@ -186,36 +198,51 @@ export default function HeroSection() {
         <div className="w-full max-w-4xl mx-auto px-4 mb-10 sm:mb-8">
           <div className="flex items-start justify-center gap-3 sm:gap-6">
             {/* Left Image */}
-            <motion.div 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.8 }}
-               className="w-1/3 aspect-[3/4] relative rounded-xl overflow-hidden shadow-sm border-[4px] border-white/50"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="w-1/3 aspect-[3/4] relative rounded-xl overflow-hidden shadow-sm border-[4px] border-white/50"
             >
-              <Image src="/images/111A7530-highlight.jpg" alt="Gallery Left" fill className="object-cover" />
+              <Image
+                src="/images/111A7530-highlight.webp"
+                alt="Gallery Left"
+                fill
+                className="object-cover"
+              />
             </motion.div>
-            
+
             {/* Center Image (Taller & offset down) */}
             <motion.div
-               initial={{ opacity: 0, y: 30 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.8, delay: 0.2 }}
-               className="w-1/3 aspect-[2/3] relative rounded-xl overflow-hidden shadow-md z-10 mt-8 sm:mt-12 border-[4px] border-white/50"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="w-1/3 aspect-[2/3] relative rounded-xl overflow-hidden shadow-md z-10 mt-8 sm:mt-12 border-[4px] border-white/50"
             >
-              <Image src="/images/111A8213-highlight.jpg" alt="Gallery Center" fill className="object-cover" />
+              <Image
+                src="/images/111A8213-highlight.webp"
+                alt="Gallery Center"
+                fill
+                className="object-cover"
+              />
             </motion.div>
 
             {/* Right Image */}
-            <motion.div 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.8, delay: 0.4 }}
-               className="w-1/3 aspect-[3/4] relative rounded-xl overflow-hidden shadow-sm border-[4px] border-white/50"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="w-1/3 aspect-[3/4] relative rounded-xl overflow-hidden shadow-sm border-[4px] border-white/50"
             >
-              <Image src="/images/111A6653.jpg" alt="Gallery Right" fill className="object-cover" />
+              <Image
+                src="/images/111A6653.webp"
+                alt="Gallery Right"
+                fill
+                className="object-cover"
+              />
             </motion.div>
           </div>
         </div>

@@ -45,7 +45,7 @@ export default function UnderConstruction() {
         {/* QR Code */}
         <div className="bg-white p-4 rounded-xl shadow-lg mb-10 w-48 h-48 relative z-20 flex items-center justify-center">
           <img 
-            src="/qrcode.png" 
+            src="/qrcode.webp" 
             alt="QR Code" 
             className="w-full h-full object-contain"
           />

@@ -6,7 +6,7 @@ export const coupleData = {
     name: "Minh Hưng",
     fullName: "Trần Minh Hưng",
     parents: "Bà Nguyễn Thị Hà",
-    image: "/images/groom.jpg",
+    image: "/images/groom.webp",
     description:
       "Một chàng trai yêu thích công nghệ và du lịch, luôn tin rằng tình yêu đích thực sẽ đến đúng lúc.",
     bankAccount: {
@@ -20,7 +20,7 @@ export const coupleData = {
     name: "Mai Thảo",
     fullName: "Nguyễn Thị Mai Thảo",
     parents: "Ông Nguyễn Văn Thành & Bà Mai Thị Phượng",
-    image: "/images/bride.jpg",
+    image: "/images/bride.webp",
     description:
       "Cô gái yêu nghệ thuật và ẩm thực, tin rằng mỗi khoảnh khắc đều đáng để trân trọng.",
     bankAccount: {
@@ -61,7 +61,7 @@ export const loveStory = [
     title: "Lần đầu gặp gỡ",
     description:
       "Chúng tôi gặp nhau tại một buổi họp mặt bạn bè. Ánh mắt đầu tiên, trái tim đã biết đây là người đặc biệt.",
-    image: "/images/story/story-1.jpg",
+    image: "/images/story/story-1.webp",
   },
   {
     id: 2,
@@ -69,7 +69,7 @@ export const loveStory = [
     title: "Buổi hẹn hò đầu tiên",
     description:
       "Một buổi tối lãng mạn bên bờ sông Sài Gòn. Từ đó, chúng tôi biết mình không thể thiếu nhau.",
-    image: "/images/story/story-2.jpg",
+    image: "/images/story/story-2.webp",
   },
   {
     id: 3,
@@ -77,7 +77,7 @@ export const loveStory = [
     title: "Chuyến du lịch đáng nhớ",
     description:
       "Cùng nhau khám phá Đà Lạt mộng mơ. Những kỷ niệm đẹp sẽ mãi in sâu trong tim.",
-    image: "/images/story/story-3.jpg",
+    image: "/images/story/story-3.webp",
   },
   {
     id: 4,
@@ -85,26 +85,26 @@ export const loveStory = [
     title: "Lời cầu hôn",
     description:
       '"Em đồng ý làm vợ anh nhé?" - Câu hỏi giản đơn nhưng mở ra một chương mới trong cuộc đời.',
-    image: "/images/story/story-4.jpg",
+    image: "/images/story/story-4.webp",
   },
 ];
 
 export const gallery = [
-  { id: 1, src: "/images/gallery/111A6425.jpg", alt: "Album Photo 1" },
-  { id: 2, src: "/images/gallery/111A6671 copy.jpg", alt: "Album Photo 2" },
-  { id: 3, src: "/images/gallery/111A7325.jpg", alt: "Album Photo 3" },
-  { id: 4, src: "/images/gallery/111A7380 copy.jpg", alt: "Album Photo 4" },
-  { id: 5, src: "/images/gallery/111A7742 copy.jpg", alt: "Album Photo 5" },
-  { id: 6, src: "/images/gallery/111A7890.jpg", alt: "Album Photo 6" },
-  { id: 7, src: "/images/gallery/111A7899 copy.jpg", alt: "Album Photo 7" },
-  { id: 8, src: "/images/gallery/111A7907 copy.jpg", alt: "Album Photo 8" },
-  { id: 9, src: "/images/gallery/111A7941 copy.jpg", alt: "Album Photo 9" },
-  { id: 10, src: "/images/gallery/111A7950.jpg", alt: "Album Photo 10" },
-  { id: 11, src: "/images/gallery/111A7958 copy.jpg", alt: "Album Photo 11" },
-  { id: 12, src: "/images/gallery/111A7966.jpg", alt: "Album Photo 12" },
-  { id: 13, src: "/images/gallery/111A8010.jpg", alt: "Album Photo 13" },
-  { id: 14, src: "/images/gallery/111A8083.jpg", alt: "Album Photo 14" },
-  { id: 15, src: "/images/gallery/111A8213.jpg", alt: "Album Photo 15" },
+  { id: 1, src: "/images/gallery/111A6425.webp", alt: "Album Photo 1" },
+  { id: 2, src: "/images/gallery/111A6671 copy.webp", alt: "Album Photo 2" },
+  { id: 3, src: "/images/gallery/111A7325.webp", alt: "Album Photo 3" },
+  { id: 4, src: "/images/gallery/111A7380 copy.webp", alt: "Album Photo 4" },
+  { id: 5, src: "/images/gallery/111A7742 copy.webp", alt: "Album Photo 5" },
+  { id: 6, src: "/images/gallery/111A7890.webp", alt: "Album Photo 6" },
+  { id: 7, src: "/images/gallery/111A7899 copy.webp", alt: "Album Photo 7" },
+  { id: 8, src: "/images/gallery/111A7907 copy.webp", alt: "Album Photo 8" },
+  { id: 9, src: "/images/gallery/111A7941 copy.webp", alt: "Album Photo 9" },
+  { id: 10, src: "/images/gallery/111A7950.webp", alt: "Album Photo 10" },
+  { id: 11, src: "/images/gallery/111A7958 copy.webp", alt: "Album Photo 11" },
+  { id: 12, src: "/images/gallery/111A7966.webp", alt: "Album Photo 12" },
+  { id: 13, src: "/images/gallery/111A8010.webp", alt: "Album Photo 13" },
+  { id: 14, src: "/images/gallery/111A8083.webp", alt: "Album Photo 14" },
+  { id: 15, src: "/images/gallery/111A8213.webp", alt: "Album Photo 15" },
 ];
 
 export const dressCode = {

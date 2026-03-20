@@ -15,7 +15,7 @@ export default function Footer() {
       {/* Background Image & Overlay */}
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         <Image 
-          src="/images/footer-bg.jpg" 
+          src="/images/footer-bg.webp" 
           alt="Footer Background" 
           fill 
           className="object-cover"
