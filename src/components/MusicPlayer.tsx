@@ -76,7 +76,7 @@ export default function MusicPlayer() {
   return (
     <div className="fixed bottom-24 md:bottom-8 right-4 md:right-6 z-60">
       {/* Hidden Audio Element */}
-      <audio ref={audioRef} src="/music/wedding-song.mp3" loop preload="auto" />
+      <audio ref={audioRef} src="/music/whistle.mp3" loop preload="auto" />
 
       <div className="relative group">
         {/* Floating Notes Animation when playing */}

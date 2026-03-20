@@ -2,10 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  images: {
-    domains: ["*"],
-    unoptimized: true,
-  },
+  // images: {
+  //   domains: ["*"],
+  //   unoptimized: true,
+  // },
 };
 
 export default nextConfig;
