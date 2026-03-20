@@ -136,7 +136,7 @@ export default function RSVPSection() {
   };
 
   return (
-    <section id="rsvp" className="py-20 md:py-28 bg-transparent relative">
+    <section id="rsvp" className="py-10 md:py-10 bg-transparent relative">
       <div className="section-container">
         {/* Section Header */}
         <motion.div
@@ -144,7 +144,7 @@ export default function RSVPSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "0px 0px -15% 0px" }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <span className="text-rose text-sm tracking-[3px] uppercase block mb-4">
             Xác nhận tham dự

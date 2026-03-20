@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Heart, ArrowUp } from "lucide-react";
+import Image from "next/image";
 import { coupleData, weddingDate } from "@/data/weddingData";
 
 export default function Footer() {
@@ -10,10 +11,19 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-cream text-dark py-16 md:py-24 overflow-hidden border-t border-black/5">
-      {/* Background Decorations */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-rose/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-gold/5 rounded-full blur-3xl" />
+    <footer className="relative text-dark py-10 md:py-12 overflow-hidden border-t border-black/5">
+      {/* Background Image & Overlay */}
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+        <Image 
+          src="/images/footer-bg.jpg" 
+          alt="Footer Background" 
+          fill 
+          className="object-cover"
+          quality={90}
+        />
+        {/* White Semi-transparent Overlay to make text readable */}
+        <div className="absolute inset-0 bg-white/40" />
+      </div>
 
       <div className="section-container relative z-10">
         <motion.div
@@ -24,25 +34,27 @@ export default function Footer() {
           className="text-center flex flex-col items-center justify-center max-w-2xl mx-auto"
         >
           {/* Couple Names */}
-          <h2 className="text-5xl md:text-7xl font-script text-rose mb-4 flex items-center justify-center gap-3">
+          <h2 className="text-5xl md:text-7xl font-script text-rose mb-4 flex items-center justify-center gap-3 drop-shadow-sm">
             <span>{coupleData.groom.name}</span>
-            <span className="text-3xl font-display text-gold/60">&</span>
+            <span className="text-3xl font-display text-gold/80 drop-shadow-sm">&</span>
             <span>{coupleData.bride.name}</span>
           </h2>
 
           {/* Wedding Date */}
-          <p className="font-display tracking-[0.3em] text-sm uppercase text-muted mb-8">
+          <p className="font-display tracking-[0.3em] text-sm md:text-base font-bold uppercase text-dark mb-8 drop-shadow-sm">
             {weddingDate.displayDate}
           </p>
 
-          <div className="w-12 h-px bg-gold/50 mb-8" />
+          <div className="w-12 h-[2px] bg-gold/70 mb-6 drop-shadow-sm" />
 
           {/* Thank You Message */}
-          <p className="font-body text-dark/70 text-sm md:text-base leading-relaxed mb-12">
-            Cảm ơn bạn đã ghé thăm trang web của chúng tôi.
-            <br className="hidden md:block" />
-            Sự hiện diện của bạn trong ngày trọng đại là món quà vô giá.
-          </p>
+          <div className="text-center drop-shadow-sm bg-white/40 backdrop-blur-md px-8 py-6 rounded-2xl border border-white/50 shadow-sm mt-4 mb-12">
+            <p className="font-script text-[1.4rem] md:text-3xl text-dark leading-relaxed">
+              Cảm ơn bạn đã ghé thăm trang web của chúng tôi.
+              <br className="hidden md:block" />
+              Sự hiện diện của bạn trong ngày trọng đại là món quà vô giá.
+            </p>
+          </div>
 
           {/* Copyright */}
           <p className="text-dark/40 font-display text-xs uppercase tracking-widest mt-auto">

@@ -8,6 +8,7 @@ import GiftSection from "@/components/GiftSection";
 import Footer from "@/components/Footer";
 import StickyBottomBar from "@/components/StickyBottomBar";
 import FloatingWishes from "@/components/FloatingWishes";
+import TransportationSection from "@/components/TransportationSection";
 
 
 
@@ -28,6 +29,7 @@ export default function Home() {
         <EventsSection />
 
         <GallerySection />
+        <TransportationSection />
         <GiftSection />
         <RSVPSection />
         <Footer />

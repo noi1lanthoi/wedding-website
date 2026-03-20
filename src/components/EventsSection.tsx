@@ -17,7 +17,7 @@ export default function EventsSection() {
   const days = Array.from({ length: daysInApril }, (_, i) => i + 1);
 
   return (
-    <section id="events" className="py-20 md:py-28 bg-white relative">
+    <section id="events" className="py-10 md:py-10 bg-white relative">
       <div className="section-container">
         {/* Section Header */}
         <motion.div
@@ -25,7 +25,7 @@ export default function EventsSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "0px 0px -15% 0px" }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <span className="text-rose text-sm tracking-[3px] uppercase block mb-4">
             Sự kiện
@@ -42,7 +42,7 @@ export default function EventsSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "0px 0px -15% 0px" }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="max-w-md mx-auto bg-rose rounded-2xl p-6 md:p-8 shadow-xl border border-gold/30 mb-16 relative overflow-hidden"
+          className="max-w-md mx-auto bg-rose rounded-2xl p-6 md:p-8 shadow-xl border border-gold/30 mb-8 relative overflow-hidden"
         >
           {/* Corner Floral Decor */}
           <div className="absolute inset-0 z-0 pointer-events-none rounded-2xl">
@@ -104,7 +104,7 @@ export default function EventsSection() {
         </motion.div>
 
         {/* Events Grid (Redesigned Layout) */}
-        <div className="flex flex-col items-center max-w-2xl mx-auto mb-16 px-4 w-full">
+        <div className="flex flex-col items-center max-w-2xl mx-auto mb-8 px-4 w-full">
           {events.map((event, index) => (
             <motion.div
               key={event.id}

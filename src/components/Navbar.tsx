@@ -9,6 +9,7 @@ const navItems = [
   { name: "Trang chủ", href: "#home" },
   { name: "Chỉ đường tới nhà hàng", href: "#event-2" },
   { name: "Gửi lời chúc đến dâu rể", href: "#gift" },
+  { name: "Đăng ký xe đưa đón khách tại Đà Nẵng", href: "#transportation" },
 ];
 
 export default function Navbar() {

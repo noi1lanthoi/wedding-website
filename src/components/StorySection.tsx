@@ -9,7 +9,7 @@ export default function StorySection() {
   return (
     <section
       id="story"
-      className="py-20 md:py-28 bg-transparent relative overflow-hidden"
+      className="py-10 md:py-10 bg-transparent relative overflow-hidden"
     >
       <div className="section-container relative z-10">
         {/* Section Header */}
@@ -18,7 +18,7 @@ export default function StorySection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "0px 0px -15% 0px" }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="text-center mb-16 md:mb-24"
+          className="text-center mb-8 md:mb-12"
         >
           <span className="text-gold text-sm tracking-[3px] uppercase block mb-4">
             Hành trình yêu thương
@@ -34,7 +34,7 @@ export default function StorySection() {
         </motion.div>
 
         {/* Polaroid Story Grid */}
-        <div className="max-w-5xl mx-auto flex flex-col items-center gap-16 md:gap-24 px-4">
+        <div className="max-w-5xl mx-auto flex flex-col items-center gap-8 md:gap-12 px-4">
           {loveStory.map((story, index) => {
             // Alternate rotations for a messy scrapbook feel
             const rotations = [
@@ -53,7 +53,7 @@ export default function StorySection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "0px 0px -15% 0px" }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
-                className={`w-full flex flex-col ${alignLeft ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-8 md:gap-16`}
+                className={`w-full flex flex-col ${alignLeft ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-8 md:gap-8`}
               >
                 {/* Polaroid Image */}
                 <div

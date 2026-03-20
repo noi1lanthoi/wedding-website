@@ -37,7 +37,7 @@ export default function HeroSection() {
         {/* Background Image & Overlays */}
         <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
           <Image
-            src="/images/hero-bg.jpg"
+            src="/images/hero-main.jpg"
             alt="Couple Background"
             fill
             className="object-cover"
@@ -68,7 +68,7 @@ export default function HeroSection() {
       </div>
 
       {/* 2. Content Below Fold */}
-      <div className="w-full bg-cream py-16 px-4 flex flex-col items-center relative z-20">
+      <div className="w-full bg-cream py-10 px-4 flex flex-col items-center relative z-20">
         
         {/* Romantic Quote */}
         <motion.div
@@ -89,7 +89,7 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Zigzag Layout for Families & Couple */}
-        <div className="w-full max-w-5xl mx-auto flex flex-col gap-12 md:gap-20 mb-20 px-4">
+        <div className="w-full max-w-5xl mx-auto flex flex-col gap-12 md:gap-10 mb-10 px-4">
           
           {/* Groom Block */}
           <motion.div
@@ -177,13 +177,13 @@ export default function HeroSection() {
           <h2 className="font-script text-4xl text-rose mb-2">
             Bạn và Người thương
           </h2>
-          <p className="text-muted text-sm max-w-sm mx-auto leading-relaxed mt-4">
+          <p className="font-script text-[1.4rem] md:text-3xl text-dark max-w-sm mx-auto leading-relaxed mt-4 drop-shadow-sm">
             Tới tham dự bữa tiệc chung vui cùng gia đình chúng tôi
           </p>
         </motion.div>
 
         {/* Highlight Image Grid */}
-        <div className="w-full max-w-4xl mx-auto px-4 mb-20 sm:mb-28">
+        <div className="w-full max-w-4xl mx-auto px-4 mb-10 sm:mb-8">
           <div className="flex items-start justify-center gap-3 sm:gap-6">
             {/* Left Image */}
             <motion.div 
@@ -193,7 +193,7 @@ export default function HeroSection() {
                transition={{ duration: 0.8 }}
                className="w-1/3 aspect-[3/4] relative rounded-xl overflow-hidden shadow-sm border-[4px] border-white/50"
             >
-              <Image src="/images/111A6623.jpg" alt="Gallery Left" fill className="object-cover" />
+              <Image src="/images/111A7530-highlight.jpg" alt="Gallery Left" fill className="object-cover" />
             </motion.div>
             
             {/* Center Image (Taller & offset down) */}
@@ -204,7 +204,7 @@ export default function HeroSection() {
                transition={{ duration: 0.8, delay: 0.2 }}
                className="w-1/3 aspect-[2/3] relative rounded-xl overflow-hidden shadow-md z-10 mt-8 sm:mt-12 border-[4px] border-white/50"
             >
-              <Image src="/images/111A6671-copy.jpg" alt="Gallery Center" fill className="object-cover" />
+              <Image src="/images/111A8213-highlight.jpg" alt="Gallery Center" fill className="object-cover" />
             </motion.div>
 
             {/* Right Image */}

@@ -7,7 +7,7 @@ import { coupleData } from "@/data/weddingData";
 
 export default function CoupleSection() {
   return (
-    <section id="couple" className="py-20 md:py-28 bg-cream">
+    <section id="couple" className="py-10 md:py-10 bg-cream">
       <div className="section-container relative">
         {/* Section Header */}
         <motion.div
@@ -15,7 +15,7 @@ export default function CoupleSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "0px 0px -15% 0px" }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <span className="text-rose text-sm tracking-[3px] uppercase block mb-4">
             Giới thiệu
@@ -26,7 +26,7 @@ export default function CoupleSection() {
         </motion.div>
 
         {/* Couple Cards - Stack on mobile, side-by-side on desktop */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 max-w-5xl mx-auto relative px-4">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-8 max-w-5xl mx-auto relative px-4">
           {/* Groom Card */}
           <motion.div
             initial={{ opacity: 0, x: -100, rotate: -15 }}
