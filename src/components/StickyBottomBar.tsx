@@ -16,7 +16,8 @@ export default function StickyBottomBar() {
       initial={{ y: 100 }}
       animate={{ y: 0 }}
       transition={{ delay: 1, duration: 0.5 }}
-      className="fixed bottom-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-md border-t border-white/10 px-2 sm:px-4 pt-3 pb-[calc(env(safe-area-inset-bottom,0px)+12px)] flex items-center justify-center gap-2 text-white"
+      className="fixed bottom-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-md border-t border-white/10 px-2 sm:px-4 pt-3 flex items-center justify-center gap-2 text-white"
+      style={{ paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 12px)' }}
     >
       <button
         onClick={() => scrollToSection("gift")}

@@ -31,9 +31,14 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg pb-3 pt-[calc(max(env(safe-area-inset-top,0px),12px))]"
-          : "bg-transparent pb-5 pt-[calc(max(env(safe-area-inset-top,0px),20px))]"
+          ? "bg-white/95 backdrop-blur-md shadow-lg pb-3"
+          : "bg-transparent pb-5"
       }`}
+      style={{
+        paddingTop: isScrolled
+          ? "calc(max(env(safe-area-inset-top, 0px), 12px))"
+          : "calc(max(env(safe-area-inset-top, 0px), 20px))",
+      }}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between w-full">
@@ -43,7 +48,7 @@ export default function Navbar() {
           <div className="flex-shrink-0 flex justify-center z-10 md:justify-start md:mr-8">
             <motion.a
               href="#home"
-              className="flex items-center gap-2 text-2xl font-script no-underline whitespace-nowrap"
+              className="flex items-center gap-2 text-2xl font-script no-underline whitespace-nowrap pt-3 pb-1"
               whileHover={{ scale: 1.05 }}
             >
               <span className={isScrolled ? "text-gold" : "text-white"}>

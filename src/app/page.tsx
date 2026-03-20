@@ -14,7 +14,7 @@ import TransportationSection from "@/components/TransportationSection";
 
 export default function Home() {
   return (
-    <main className="min-h-[100dvh] relative pb-[calc(env(safe-area-inset-bottom,0px)+80px)]">
+    <main className="min-h-[100dvh] relative" style={{ paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 80px)' }}>
       {/* <UnderConstruction /> */}
 
       {/* 

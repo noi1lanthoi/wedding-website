@@ -110,19 +110,19 @@ export default function RSVPSection() {
           time: "Vừa xong",
         };
         setWishes([newWish, ...wishes]);
+        window.dispatchEvent(new CustomEvent("newWish", { detail: newWish }));
       } else {
         // Simulator behavior
         await new Promise((resolve) => setTimeout(resolve, 1500));
         if (formData.message) {
-          setWishes([
-            {
-              id: Date.now(),
-              name: formData.name,
-              message: formData.message,
-              time: "Vừa xong",
-            },
-            ...wishes,
-          ]);
+          const newWish = {
+            id: Date.now(),
+            name: formData.name,
+            message: formData.message,
+            time: "Vừa xong",
+          };
+          setWishes([newWish, ...wishes]);
+          window.dispatchEvent(new CustomEvent("newWish", { detail: newWish }));
         }
       }
 

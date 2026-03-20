@@ -14,6 +14,14 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport = {
+  themeColor: "#FAFAF9",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  viewportFit: "cover",
+};
+
 import { Playfair_Display, Great_Vibes, Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import MusicPlayer from "@/components/MusicPlayer";

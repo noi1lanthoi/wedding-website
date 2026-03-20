@@ -29,7 +29,7 @@ export default function MusicPlayer() {
     const audio = audioRef.current;
     if (audio) {
       audio.volume = 0.5;
-      
+
       const playAudio = async () => {
         try {
           await audio.play();
@@ -37,23 +37,23 @@ export default function MusicPlayer() {
         } catch (error) {
           console.log("Autoplay prevented:", error);
           setIsPlaying(false);
-          
+
           // Thêm listener cho tương tác đầu tiên của user để bật nhạc
           const playOnInteract = async () => {
             try {
               await audio.play();
               setIsPlaying(true);
               // Xóa event listeners sau khi đã play thành công
-              ["click", "touchstart", "scroll", "keydown"].forEach(evt => 
-                document.removeEventListener(evt, playOnInteract)
+              ["click", "touchstart", "scroll", "keydown"].forEach((evt) =>
+                document.removeEventListener(evt, playOnInteract),
               );
             } catch (err) {
               console.log("Still prevented:", err);
             }
           };
 
-          ["click", "touchstart", "scroll", "keydown"].forEach(evt => 
-            document.addEventListener(evt, playOnInteract, { once: true })
+          ["click", "touchstart", "scroll", "keydown"].forEach((evt) =>
+            document.addEventListener(evt, playOnInteract, { once: true }),
           );
         }
       };

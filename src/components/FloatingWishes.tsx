@@ -8,6 +8,7 @@ interface Wish {
   name: string;
   message: string;
   uniqueId?: number;
+  time?: string;
 }
 
 const mockWishes: Wish[] = [
@@ -19,13 +20,52 @@ const mockWishes: Wish[] = [
 ];
 
 export default function FloatingWishes() {
+  const [allWishes, setAllWishes] = useState<Wish[]>(mockWishes);
   const [activeWishes, setActiveWishes] = useState<Wish[]>([]);
+
+  // Fetch initial wishes from API, if any
+  useEffect(() => {
+    import("@/data/weddingData")
+      .then(({ apiConfig }) => {
+        if (apiConfig.rsvpApiUrl) {
+          fetch(apiConfig.rsvpApiUrl)
+            .then((res) => res.json())
+            .then((data) => {
+              if (data && Array.isArray(data) && data.length > 0) {
+                setAllWishes(data);
+              }
+            })
+            .catch((err) =>
+              console.error("Error fetching wishes for floating:", err)
+            );
+        }
+      })
+      .catch((err) => console.error("Error loading apiConfig", err));
+  }, []);
+
+  // Listen to custom event when a user submits a new wish
+  useEffect(() => {
+    const handleNewWish = (event: CustomEvent<Wish>) => {
+      setAllWishes((prev) => [event.detail, ...prev]);
+    };
+    
+    // Type casting because standard EventListener doesn't know about CustomEvent details
+    window.addEventListener("newWish", handleNewWish as EventListener);
+    
+    return () => {
+      window.removeEventListener("newWish", handleNewWish as EventListener);
+    };
+  }, []);
 
   useEffect(() => {
     let index = 0;
+    
+    // Don't setup interval if there are no wishes (though we have mockWishes fallback)
+    if (allWishes.length === 0) return;
+
     const interval = setInterval(() => {
-      // Add a new wish to the list
-      const newWish = { ...mockWishes[index], uniqueId: Date.now() };
+      // Create a unique copy of the wish to render it freshly
+      const newWish = { ...allWishes[index], uniqueId: Date.now() };
 
       setActiveWishes((prev) => {
         const next = [...prev, newWish];
@@ -36,11 +76,12 @@ export default function FloatingWishes() {
         return next;
       });
 
-      index = (index + 1) % mockWishes.length;
+      // Loop back to the beginning when we hit the end
+      index = (index + 1) % allWishes.length;
     }, 4500); // Popup every 4.5 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [allWishes]); // Rethink the interval when `allWishes` updates
 
   return (
     <div className="fixed bottom-24 left-4 z-40 pointer-events-none flex flex-col-reverse gap-4 items-start">
