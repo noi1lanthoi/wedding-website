@@ -120,6 +120,7 @@ export default function GallerySection() {
           >
             {/* Close Button */}
             <button
+              aria-label="Đóng ảnh"
               onClick={closeLightbox}
               className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors z-10 bg-transparent border-none cursor-pointer"
             >
@@ -128,6 +129,7 @@ export default function GallerySection() {
 
             {/* Navigation Buttons */}
             <button
+              aria-label="Ảnh trước"
               onClick={(e) => {
                 e.stopPropagation();
                 goToPrevious();
@@ -138,6 +140,7 @@ export default function GallerySection() {
             </button>
 
             <button
+              aria-label="Ảnh sau"
               onClick={(e) => {
                 e.stopPropagation();
                 goToNext();

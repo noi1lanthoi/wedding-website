@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CarFront, Gift } from "lucide-react";
+import { CarFront } from "lucide-react";
 
 export default function StickyBottomBar() {
   const scrollToSection = (id: string) => {
@@ -20,16 +20,8 @@ export default function StickyBottomBar() {
       style={{ paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 12px)' }}
     >
       <button
-        onClick={() => scrollToSection("gift")}
-        className="flex-1 max-w-[50%] bg-gold/90 hover:bg-gold transition-colors rounded-xl px-2 py-2 flex items-center justify-center gap-1 sm:gap-2 shadow-lg"
-      >
-        <Gift className="w-4 h-4 shrink-0 text-white" />
-        <span className="text-[10px] sm:text-xs font-medium text-center leading-tight">Gửi lời chúc đến dâu rể</span>
-      </button>
-
-      <button
         onClick={() => scrollToSection("transportation")}
-        className="flex-1 max-w-[50%] bg-rose hover:bg-rose/90 transition-colors rounded-xl px-2 py-2 flex items-center justify-center gap-1 sm:gap-2 shadow-lg"
+        className="flex-1 max-w-sm w-full bg-rose hover:bg-rose/90 transition-colors rounded-xl px-2 py-2 flex items-center justify-center gap-1 sm:gap-2 shadow-lg"
       >
         <CarFront className="w-4 h-4 shrink-0 text-white" />
         <span className="text-[10px] sm:text-xs font-medium text-center leading-tight">Đăng ký xe đưa đón khách tại Đà Nẵng</span>

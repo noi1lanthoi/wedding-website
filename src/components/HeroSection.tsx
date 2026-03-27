@@ -43,6 +43,7 @@ export default function HeroSection() {
             src="/images/hero-main.webp"
             alt="Couple Background"
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
@@ -106,6 +107,7 @@ export default function HeroSection() {
                 src="/images/groom-portrait.webp"
                 alt={coupleData.groom.name}
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -147,6 +149,7 @@ export default function HeroSection() {
                 src="/images/111A6301.webp"
                 alt={coupleData.bride.name}
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -209,6 +212,7 @@ export default function HeroSection() {
                 src="/images/111A7530-highlight.webp"
                 alt="Gallery Left"
                 fill
+                sizes="(max-width: 640px) 33vw, 33vw"
                 className="object-cover"
               />
             </motion.div>
@@ -225,6 +229,7 @@ export default function HeroSection() {
                 src="/images/111A8213-highlight.webp"
                 alt="Gallery Center"
                 fill
+                sizes="(max-width: 640px) 33vw, 33vw"
                 className="object-cover"
               />
             </motion.div>
@@ -241,6 +246,7 @@ export default function HeroSection() {
                 src="/images/111A6653.webp"
                 alt="Gallery Right"
                 fill
+                sizes="(max-width: 640px) 33vw, 33vw"
                 className="object-cover"
               />
             </motion.div>

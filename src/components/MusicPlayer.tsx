@@ -76,7 +76,7 @@ export default function MusicPlayer() {
   return (
     <div className="fixed bottom-24 md:bottom-8 right-4 md:right-6 z-60">
       {/* Hidden Audio Element */}
-      <audio ref={audioRef} src="/music/whistle.mp3" loop preload="auto" />
+      <audio ref={audioRef} src="/music/whistle.mp3" loop preload="none" />
 
       <div className="relative group">
         {/* Floating Notes Animation when playing */}
@@ -111,6 +111,7 @@ export default function MusicPlayer() {
 
         {/* Main Button */}
         <motion.button
+          aria-label="Toggle Background Music"
           onClick={togglePlay}
           className="relative w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 backdrop-blur-md shadow-lg border border-gold/30 flex items-center justify-center overflow-hidden hover:scale-105 transition-transform duration-300"
           whileTap={{ scale: 0.95 }}
