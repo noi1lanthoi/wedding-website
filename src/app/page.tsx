@@ -4,16 +4,15 @@ import HeroSection from "@/components/HeroSection";
 import EventsSection from "@/components/EventsSection";
 import GallerySection from "@/components/GallerySection";
 import RSVPSection from "@/components/RSVPSection";
+import GiftSection from "@/components/GiftSection";
 import Footer from "@/components/Footer";
 import StickyBottomBar from "@/components/StickyBottomBar";
 import FloatingWishes from "@/components/FloatingWishes";
 import TransportationSection from "@/components/TransportationSection";
 
-
-
 export default function Home() {
   return (
-    <main className="min-h-[100dvh] relative" style={{ paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 80px)' }}>
+    <main className="min-h-dvh relative" style={{ paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 80px)' }}>
       {/* <UnderConstruction /> */}
 
       {/* 
@@ -29,6 +28,7 @@ export default function Home() {
 
         <GallerySection />
         <TransportationSection />
+        <GiftSection />
         <RSVPSection />
         <Footer />
         <FloatingWishes />
